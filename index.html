@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <center><h1>SGPA Calculator</h1></center> 
+    <div class="container">
+        <form id="sgpaForm">
+            <div class="input-group">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" name="studentName" required>
+            </div>
+            <div class="input-group">
+                <label for="usn">USN:</label>
+                <input type="text" id="usn" name="usn" required>
+            </div>
+            <div id="subjectsContainer">
+                <div class="input-group">
+                    <label for="grade1">Subject 1 Grade:</label>
+                    <input type="text" class="grade" name="grade[]" required>
+                    <label for="credits1">Credits:</label>
+                    <input type="number" class="credits" name="credits[]" min="1" required>
+                    <button type="button" class="deleteBtn" onclick="deleteSubject(this)">Delete</button>
+                    <button type="button" class="addBtn" onclick="addSubject()">Add Subject</button>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="button" onclick="calculateSGPA()">Calculate SGPA</button>
+                <button type="button" onclick="refreshForm()">Refresh</button>
+                <br>
+                <br>
+                <button type="button" onclick="downloadCSV()">Download CSV</button>
+            </div>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
